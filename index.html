@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<!--
+  Name: Hannah Chen
+  CS 132 Spring 2022
+  Date: May 12, 2022
+  index.html is the home page for Are you board?, a website that recommends
+  activities for people who are bored. It allows the user to specify their 
+  preferences, such as type of activity (education, social) and whether or not
+  the activity is free. The website has a feature to keep the activities that 
+  the user likes in a running list. The website also lets users play trivia.
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Are you board?</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Akshar:wght@300&family=Koulen&display=swap" rel="stylesheet">
+    <script src="helpers.js"></script>
+    <script defer src="board.js"></script>
+  </head>
+  <body>
+    <header>
+      <h1>Are you board?</h1>
+    </header>
+    <main>
+      <section id="menu-view">
+        <h2>You've come to the right place!</h2>
+        <button id="start-choose-btn">Choose an activity!</button>
+        <button id="see-list-btn">See saved activities</button>
+        <button id="trivia-btn">Play Trivia</button>
+      </section>
+      <section id="list-view" class="hidden">
+        <header>
+          <button id="back-btn">Back to Home</button>
+        </header>
+        <h2>Your saved activities</h2>
+        <ol id="saved-activities">
+
+        </ol>
+      </section>
+      <section id="choose-view" class="hidden">
+        <button id="back-from-choose-btn">Back to Home</button>
+        <h2>Let's find an activity for you!</h2>
+        <h3>Select your preferences below:</h3>
+        <article id="settings">
+          <div>
+            <h3>Activity Type</h3>
+            <p>
+              <input type="checkbox" name="type" value="education" checked />
+              <label>education</label>
+              <input type="checkbox" name="type" value="recreational" />
+              <label>recreational</label>
+              <input type="checkbox" name="type" value="social" />
+              <label>social</label>
+              <input type="checkbox" name="type" value="diy" />
+              <label>diy</label>
+              <input type="checkbox" name="type" value="charity" />
+              <label>charity</label>
+              <input type="checkbox" name="type" value="cooking" />
+              <label>cooking</label>
+              <input type="checkbox" name="type" value="relaxation" />
+              <label>relaxation</label>
+              <input type="checkbox" name="type" value="music" />
+              <label>music</label>
+              <input type="checkbox" name="type" value="busywork" />
+              <label>busywork</label>
+            </p>
+          </div>
+          <div>
+            <h3>&num; people (note: education and diy are solo activities)</h3>
+            <p>
+              <input
+                type="range"
+                id="number-pple"
+                name="number-pple"
+                min="1"
+                max="5"
+                value="2"
+              />
+              <label for="number-pple" id="number-pple-text">2 people</label>
+            </p>
+          </div>
+          <div>
+            <h3>Price</h3>
+            <p>
+              <input type="radio" name="price" value="free" checked />
+              <label>Free</label>
+              <input type="radio" name="price" value="dollar" />
+              <label>&#36;</label>
+            </p>
+          </div>
+        </article>
+        <button id="submit-btn">submit</button>
+        <article id="activity-info">
+          <p id="activity">Here's an activity for you: </p>
+          <ul id="activity-info-list">
+
+          </ul>
+        </article>
+        <div id="like-and-add" class="hidden">
+          <h3>Like this activity?</h3>
+          <button id="add-btn">Add to list</button>
+        </div>
+      </section>
+      <section id="trivia-view" class="hidden">
+        <header>
+          <button id="back-from-trivia-btn">Back to Home</button>
+          <button id="next-question-btn">Next Question</button>
+        </header>
+        <h2>Welcome to Trivia!</h2>
+        <h3>Answer the following Jeopardy-Style Question: </h3>
+        <article id="question-bank">
+          
+        </article>
+        <form id="guess-form">
+          <p>
+            <label for="guess">Your guess:</label>
+            <input
+              type="text"
+              id="guess"
+              name="guess"
+              required
+              minlength="0"
+              maxlength="50"
+              size="40"
+              placeholder="press enter or submit"
+            />
+          </p>
+          <p>
+            <input type="submit" id="submit-guess" value="Submit" />
+          </p>
+        </form>
+      </section>
+    </main>
+    <footer>
+      <p>Data from the <a href="https://www.boredapi.com/">Bored API</a> 
+        and <a href="https://jservice.io/">jService Trivia API</a>.</p>
+    </footer>
+  </body>
+</html>

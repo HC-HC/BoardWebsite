@@ -1,0 +1,80 @@
+/*
+  Name: Hannah Chen
+  CS 132 Spring 2022
+  Date: May 12, 2022
+  This is the styles.css page for Are you board?, a website that recommends
+  activities for people who are bored. styles.css is shared across the menu, 
+  list, choose, and trivia view of the website. This file styles elements of the page 
+  including the background images, text, and buttons.
+*/
+
+h1, section, button, #submit-guess, footer p {
+  text-align: center;
+}
+
+button, #submit-guess {
+  background-color: white;
+  padding: 15px;
+  font-size: 16px;
+}
+
+button, #submit-guess, #settings div {
+  border: solid black 1px;
+}
+
+#activity, li {
+  font-size: 20pt;
+}
+
+#activity-info, #like-and-add {
+  text-align: left;
+}
+
+.hidden {
+  display: none;
+}
+
+html {
+  background-image: url(imgs/wood-board.jpg);
+  background-size: cover;
+  font-family: 'Akshar', sans-serif;
+}
+
+section {
+  background-color:rgb(230, 224, 206);
+  border: 2px solid rgb(0, 0, 0);
+  padding: 10px;
+}
+
+#game-view {
+  min-width: 500px;
+}
+
+h1 {
+  font-family: 'Koulen', cursive;
+  font-size: 60pt;
+}
+
+h2 {
+  font-size: 25pt;
+}
+
+main {
+  width: 80%;
+  margin: auto;
+}
+
+#settings, #settings div, #trivia-view header {
+  display: flex;
+}
+
+#trivia-view header {
+  justify-content: space-between;
+}
+
+#settings div {
+  padding: 5px;
+  margin: 5px;
+  flex-direction: column;
+  align-items: center;
+}
